@@ -1277,12 +1277,15 @@
         }
 
         // Close overlay on outside click
-        document.getElementById('letterOverlay').addEventListener('click', function (e) {
-            if (e.target === this) {
-                this.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
+        const letterOverlay = document.getElementById('letterOverlay');
+        if (letterOverlay) {
+            letterOverlay.addEventListener('click', function (e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
 
 
 
@@ -1319,7 +1322,10 @@
 
    
         // Set minimum date to today
-        document.getElementById('appo16').min = new Date().toISOString().split('T')[0];
+        const appointmentDate = document.getElementById('appo16');
+        if (appointmentDate) {
+            appointmentDate.min = new Date().toISOString().split('T')[0];
+        }
 
         function showNotification(message, type) {
             const notification = document.getElementById('appo11');
@@ -1398,12 +1404,15 @@
         }
 
         // Add enter key support for form submission
-        document.getElementById('appo13').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendToWhatsApp();
-            }
-        });
+        const appointmentMessage = document.getElementById('appo13');
+        if (appointmentMessage) {
+            appointmentMessage.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendToWhatsApp();
+                }
+            });
+        }
     
     </script>
 </body>
