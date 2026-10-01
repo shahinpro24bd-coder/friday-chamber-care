@@ -1277,12 +1277,15 @@
         }
 
         // Close overlay on outside click
-        document.getElementById('letterOverlay').addEventListener('click', function (e) {
-            if (e.target === this) {
-                this.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
+        const letterOverlay = document.getElementById('letterOverlay');
+        if (letterOverlay) {
+            letterOverlay.addEventListener('click', function (e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
 
 
 
