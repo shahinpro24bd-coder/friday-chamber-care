@@ -1322,7 +1322,10 @@
 
    
         // Set minimum date to today
-        document.getElementById('appo16').min = new Date().toISOString().split('T')[0];
+        const appointmentDate = document.getElementById('appo16');
+        if (appointmentDate) {
+            appointmentDate.min = new Date().toISOString().split('T')[0];
+        }
 
         function showNotification(message, type) {
             const notification = document.getElementById('appo11');
