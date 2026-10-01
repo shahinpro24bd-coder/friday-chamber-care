@@ -1398,12 +1398,15 @@
         }
 
         // Add enter key support for form submission
-        document.getElementById('appo13').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendToWhatsApp();
-            }
-        });
+        const appointmentMessage = document.getElementById('appo13');
+        if (appointmentMessage) {
+            appointmentMessage.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendToWhatsApp();
+                }
+            });
+        }
     
     </script>
 </body>
